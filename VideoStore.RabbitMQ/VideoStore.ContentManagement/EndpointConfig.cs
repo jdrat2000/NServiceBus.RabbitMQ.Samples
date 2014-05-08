@@ -1,20 +1,13 @@
+
 namespace VideoStore.ContentManagement
 {
-    using System;
     using NServiceBus;
 
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, UsingTransport<RabbitMQ> { }
-
-    public class MyClass : IWantToRunWhenBusStartsAndStops
+	/*
+		This class configures this endpoint as a Server. More information about how to configure the NServiceBus host
+		can be found here: http://particular.net/articles/the-nservicebus-host
+	*/
+	public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
-        public void Start()
-        {
-            Console.Out.WriteLine("The VideoStore.ContentManagement endpoint is now started and subscribed to OrderAccepted events from VideoStore.Sales");
-        }
-
-        public void Stop()
-        {
-
-        }
     }
 }
